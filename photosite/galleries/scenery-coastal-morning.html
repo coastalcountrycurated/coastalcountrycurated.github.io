@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal Morning — Elena Marsh Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Mulish:wght@400;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18C7 14 10 20 14 17C18 14 21 19 24 16C26 14 27 15 28 16" stroke="#C97B5C" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M4 23C7 19 10 25 14 22C18 19 21 24 24 21C26 19 27 20 28 21" stroke="#8FBDB5" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      Elena Marsh
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../scenery.html" class="active">Scenery</a></li>
+      <li><a href="../accommodation.html">Accommodation</a></li>
+      <li><a href="../maternity.html">Maternity</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <a href="../scenery.html" class="back-link">&larr; All scenery</a>
+    <span class="script-tag">wander &amp;</span>
+    <h1>Coastal Morning</h1>
+    <p>Cornwall &middot; 22 photos &middot; Shot 2024&ndash;2026</p>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="photo-grid">
+    <button class="photo-item" data-full=""><span class="placeholder-label">Photo 1 — replace src in HTML</span></button>
+    <button class="photo-item" data-full=""><span class="placeholder-label">Photo 2</span></button>
+    <button class="photo-item" data-full=""><span class="placeholder-label">Photo 3</span></button>
+    <button class="photo-item" data-full=""><span class="placeholder-label">Photo 4</span></button>
+    <button class="photo-item" data-full=""><span class="placeholder-label">Photo 5</span></button>
+    <button class="photo-item" data-full=""><span class="placeholder-label">Photo 6</span></button>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">Close ✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  document.querySelectorAll('.photo-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var full = item.getAttribute('data-full');
+      if (!full) return;
+      document.getElementById('lightbox-img').src = full;
+      document.getElementById('lightbox').classList.add('open');
+    });
+  });
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+  document.getElementById('lightbox').addEventListener('click', function (e) {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
